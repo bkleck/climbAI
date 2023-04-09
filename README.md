@@ -46,8 +46,6 @@ Overall, the project deliverables is separated into 3 components: AI & Algorithm
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Built With
 
 This section outlines any major frameworks/libraries used to bootstrap our project.
@@ -61,8 +59,6 @@ This section outlines any major frameworks/libraries used to bootstrap our proje
 - [![aws][aws]][aws-url]
 - [![mq][mq]][mq-url]
 - [![ant-media][ant-media]][ant-media-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AI and Algorithm -->
 
@@ -104,7 +100,6 @@ Serves as a portable client application, allowing the climber to live stream the
 
 Riyan
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 
@@ -114,7 +109,6 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
 
@@ -125,7 +119,6 @@ The team is extremely grateful to the following people for the support and mento
 1. Professor Lin Weisi | Project Supervisor
 2. Dr Xuan Jing | Project Co-Supervisor
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
