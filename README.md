@@ -16,12 +16,9 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#overall-software-solutions">Software Architecture Diagram</a></li>
+    <li><a href="#built-with">Built With</a></li>
     <li>
       <a href="#ai-and-algorithm">AI and Algorithm</a>
     </li>
@@ -42,9 +39,10 @@
 
 This project aims to create a technology-assistive solution that will enable visually impaired individuals to participate in rock climbing. The proposed solution will leverage computer vision technology to help visually impaired climbers navigate rock holds by analysing video streams and providing real-time guidance via audio means. The project will involve the development of custom software to process the video streams and generate the necessary guidance, as well as the creation of a cloud-based infrastructure to enable seamless deployment of the solution. Ultimately, the goal of this project is to promote inclusion and accessibility in the sport of rock climbing, allowing visually impaired individuals to enjoy the physical and mental benefits of this challenging activity.
 
-Overall, the project deliverables is separated into 3 components: AI & Algorithms, User Applications, Cloud Infrastructure, which are taken charge by each team member: Boon Kong, Xinrui, Riyan respectively. The overall software architecture is as follows:
+Overall, the project deliverables is separated into 3 components: AI & Algorithms, User Applications, Cloud Infrastructure, which are taken charge by each team member: Boon Kong, Xinrui, Riyan respectively. The overall software architecture and solutions are as follows:
 
-[Software Architecture Diagram][software-screenshot]
+## Overall Software Solutions
+### [software-architecture-screenshot]
 ![Product Name Screen Shot][product-screenshot]
 
 ### Built With
@@ -143,5 +141,5 @@ The team is extremely grateful to the following people for the support and mento
 [mq-url]: https://aws.amazon.com/sqs/
 [ant-media]: https://img.shields.io/badge/Ant%20Media-FF5733?style=for-the-badge&logo=ant-media-server&logoColor=white
 [ant-media-url]: https://antmedia.io/
-[software-screenshot]: https://drive.google.com/file/d/10VzpZKkVAtlb9m8Vrmv_k3RpOdwNFwhU/view?usp=sharing
+[software-architecture-screenshot]: https://drive.google.com/file/d/10VzpZKkVAtlb9m8Vrmv_k3RpOdwNFwhU/view?usp=sharing
 
