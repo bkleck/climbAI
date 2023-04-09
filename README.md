@@ -44,6 +44,7 @@ This project aims to create a technology-assistive solution that will enable vis
 
 Overall, the project deliverables is separated into 3 components: AI & Algorithms, User Applications, Cloud Infrastructure, which are taken charge by each team member: Boon Kong, Xinrui, Riyan respectively. The overall software architecture is as follows:
 
+![Software Architecture][software-screenshot]
 ![Product Name Screen Shot][product-screenshot]
 
 ### Built With
@@ -142,3 +143,5 @@ The team is extremely grateful to the following people for the support and mento
 [mq-url]: https://aws.amazon.com/sqs/
 [ant-media]: https://img.shields.io/badge/Ant%20Media-FF5733?style=for-the-badge&logo=ant-media-server&logoColor=white
 [ant-media-url]: https://antmedia.io/
+[software-screenshot]: https://drive.google.com/file/d/10VzpZKkVAtlb9m8Vrmv_k3RpOdwNFwhU/view?usp=sharing
+
