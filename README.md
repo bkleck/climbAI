@@ -1,3 +1,5 @@
+
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -96,9 +98,19 @@ Serves as a portable client application, allowing the climber to live stream the
 2. We leverage multi-threading and asynchronous programming techniques to ensure that the app can constantly listen for audio information from the cloud AI using a message queue. The appropriate audio is then natively played in real-time to guide the climber, providing an immersive and interactive experience.
 
 # Cloud Infrastructure
+With key considerations such as availability, scalability, performance and security in consideration, we have deploy a vast majority of compute workloads on AWS.
+ 
+## Cloud Solutioning
+The project uses core AWS services to support several processes in a largely decoupled and serverless architecture:  
+![cloud-architecture](https://drive.google.com/file/d/10VzpZKkVAtlb9m8Vrmv_k3RpOdwNFwhU/view?usp=sharing)
 
-Riyan
-
+1. The user mounts his mobile phone securely (e.g. on a tripod) to capture the climbing route on the rockwall in his camera frame. He then clicks on the <i>Start Streaming</i> button on the mobile app. The mobile app would start streaming the live camera feed to an RTMP endpoint hosted on an EC2 instance.
+2. When the climber is in position on the rockwall, he may start the climb session by clicking on the <i>Start Climb</i> button on the watch. This sends out an HTTP request to an endpoint on API Gateway. A Lambda function is triggered by this HTTP request and in turn prompts the <i>ClimbAI</i> EC2 instance to begin ingesting the live camera stream. 
+3. Computer vision inference and algorithmic processing workloads are performed on live video frames, producing output parameters such as relative distance to the next hold and the body part in motion.
+4. These output parameters are put into an SQS Queue, in turn to be consumed by the mobile app.
+5. Upon receiving the relative distance and body part data, the mobile app processes it and modulates an audio waveform to be played by the earphones worn by the climber. The climber interprets the audio tones to assist him in his climb.
+6. After the climb is completed, the climber may click on the <i>Stop Climb</i> button on the watch to terminate his climb session. Upon this, the watch sends an HTTP request, containing data from the climb session, to another endpoint on the API Gateway. This triggers another Lambda function to insert a record into a persistent data store hosted by DynamoDB.
+7. The web application will be updated with these new records and display them on a dashboard hosted by AWS Amplify on the public internet.
 
 <!-- USAGE EXAMPLES -->
 
@@ -142,4 +154,3 @@ The team is extremely grateful to the following people for the support and mento
 [ant-media]: https://img.shields.io/badge/Ant%20Media-FF5733?style=for-the-badge&logo=ant-media-server&logoColor=white
 [ant-media-url]: https://antmedia.io/
 [software-architecture-screenshot]: https://drive.google.com/file/d/10VzpZKkVAtlb9m8Vrmv_k3RpOdwNFwhU/view?usp=sharing
-
