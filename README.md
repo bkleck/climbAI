@@ -65,7 +65,36 @@ This section outlines any major frameworks/libraries used to bootstrap our proje
 
 # AI and Algorithm
 
-BK
+## Artificial Intelligence
+
+We utilised 2 forms of computer vision in our project, mainly instance segmentation of climbing holds using Facebook's ![Detectron2](https://github.com/facebookresearch/detectron2) library with Mask R-CNN model, and pose estimation of climber's key-points using Google's [MediaPipe](https://mediapipe.dev/) library.
+
+### Technical Details
+1. The best 100 images of "bouldering wall stock images" were scraped from Google search and labelled manually by us using the ![VGG-Image-Annotator](https://www.robots.ox.ac.uk/~vgg/software/via/via.html) and converted into COCO JSON format for input into Mask R-CNN model.
+2. Image augmentation using the ![Albumentation](https://albumentations.ai/) library was utilised to improve model performance by ensuring flexibility in different environmental conditions.
+3. The base model was fine-tuned and hyperparameter tuning was performed, achieving a class accuracy of 93.8% and AP of 84.0 using the Cosine Annealing learning rate scheduler.
+4. We extracted climber key-points (elbows, wrists and feet) from the MediaPipe Pose output in every frame to get the real-time location of the user.
+
+## Algorithm
+
+Our algorithm helps visually-impaired climbers scale climbing routes by giving them guidance to the next hold using sound output as an indicator of distance. The detailed ![Logic-Diagram](https://drive.google.com/file/d/1f4howkjsZ6SmW1u_paOCe2KLB10hCQFJ/view?usp=sharing) shows the outline of how our algorithm works.
+
+### Technical Details
+1. Once the app is activated, the Mask R-CNN model extracts segmentations of holds and MediaPipe Pose model extracts key-points of climber.
+2. Hold colours are classified using the HSV colour range.
+3. When all 4 user limbs are on the same coloured holds, climb would be started and direction guidance will be initiated.
+4. When user is on 3-point contact (e.g. moving only 1 limb), the next nearest hold is determined and euclidean distance is calculated.
+5. Audio will be played on the mobile phone with beats per minute (BPM) corresponding to the distance away from the hold.
+6. Climb will be stopped when both hands of the user has touched the highest hold.
+
+## Results
+
+We tested our entire algorithm on 7 test videos of actual climbs performed on real bouldering walls that we have visited, and summarized our results as shown below:
+
+- Instance Segmentation Accuracy: 88.3%
+- Pose Estimation Accuracy: 91.0%
+- Target Hold Prediction Accuracy: 75.3%
+- Audio Output Accuracy: 70.3%
 
 # User Applications
 
