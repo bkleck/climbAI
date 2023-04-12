@@ -1,0 +1,7 @@
+notebooks
+.vscode
+.venv
+__pycache__
+data
+Include
+Scripts

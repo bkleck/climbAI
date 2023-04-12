@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_example_rtmp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <EditText
+        android:id="@+id/et_rtp_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:inputType="textUri"
+        android:textColor="@color/appColor"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/background_view"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/b_record"  />
+
+    <ImageButton
+        android:id="@+id/b_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:outlineProvider="none"
+        android:scaleType="fitCenter"
+        android:src="@drawable/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/b_start_stop"
+        app:layout_constraintStart_toStartOf="parent" />
+
+  <ImageButton
+      android:id="@+id/b_start_stop"
+      android:layout_width="78dp"
+      android:layout_height="54dp"
+      android:layout_marginBottom="20dp"
+      android:background="@null"
+      android:scaleType="fitCenter"
+      android:src="@drawable/play50"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/switch_camera"
+      app:layout_constraintStart_toEndOf="@id/b_record" />
+
+    <ImageButton
+        android:id="@+id/switch_camera"
+        android:layout_width="48dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="20dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:src="@drawable/switch50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/b_start_stop" />
+</androidx.constraintlayout.widget.ConstraintLayout>
