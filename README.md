@@ -174,6 +174,6 @@ The team is extremely grateful to the following people for the support and mento
 [ant-media]: https://img.shields.io/badge/Ant%20Media-FF5733?style=for-the-badge&logo=ant-media-server&logoColor=white
 [ant-media-url]: https://antmedia.io/
 [software-architecture-screenshot]: https://drive.google.com/file/d/10VzpZKkVAtlb9m8Vrmv_k3RpOdwNFwhU/view?usp=sharing
-[algo-logic-diagram]: https://drive.google.com/file/d/1pTqF8hgAB4eyG7-UhaXXid2Rylg0V4EF/view?usp=sharing
+[algo-logic-diagram]: https://drive.google.com/file/d/1f4howkjsZ6SmW1u_paOCe2KLB10hCQFJ/view?usp=sharing
 [VGG-Image-Annotator]: https://www.robots.ox.ac.uk/~vgg/software/via/via.html
 [Albumentation]: https://albumentations.ai/
