@@ -30,7 +30,6 @@
     <li>
       <a href="#cloud-infrastructure">Cloud Infrastructure</a>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -44,7 +43,7 @@ This project aims to create a technology-assistive solution that will enable vis
 Overall, the project deliverables is separated into 3 components: AI & Algorithms, User Applications, Cloud Infrastructure, which are taken charge by each team member: Boon Kong, Xinrui, Riyan respectively. The overall software architecture and solutions are as follows:
 
 ## Overall Software Solutions
-### [software-architecture-screenshot]
+### 
 ![Product Name Screen Shot][product-screenshot]
 
 ### Built With
@@ -67,17 +66,17 @@ This section outlines any major frameworks/libraries used to bootstrap our proje
 
 ## Artificial Intelligence
 
-We utilised 2 forms of computer vision in our project, mainly instance segmentation of climbing holds using Facebook's ![Detectron2](https://github.com/facebookresearch/detectron2) library with Mask R-CNN model, and pose estimation of climber's key-points using Google's [MediaPipe](https://mediapipe.dev/) library.
+We utilised 2 forms of computer vision in our project, mainly instance segmentation of climbing holds using Facebook's [Detectron2] library with Mask R-CNN model, and pose estimation of climber's key-points using Google's [MediaPipe] library.
 
 ### Technical Details
-1. The best 100 images of "bouldering wall stock images" were scraped from Google search and labelled manually by us using the ![VGG-Image-Annotator](https://www.robots.ox.ac.uk/~vgg/software/via/via.html) and converted into COCO JSON format for input into Mask R-CNN model.
-2. Image augmentation using the ![Albumentation](https://albumentations.ai/) library was utilised to improve model performance by ensuring flexibility in different environmental conditions.
+1. The best 100 images of "bouldering wall stock images" were scraped from Google search and labelled manually by us using the [VGG-Image-Annotator] and converted into COCO JSON format for input into Mask R-CNN model.
+2. Image augmentation using the [Albumentation] library was utilised to improve model performance by ensuring flexibility in different environmental conditions.
 3. The base model was fine-tuned and hyperparameter tuning was performed, achieving a class accuracy of 93.8% and AP of 84.0 using the Cosine Annealing learning rate scheduler.
 4. We extracted climber key-points (elbows, wrists and feet) from the MediaPipe Pose output in every frame to get the real-time location of the user.
 
 ## Algorithm
 
-Our algorithm helps visually-impaired climbers scale climbing routes by giving them guidance to the next hold using sound output as an indicator of distance. The detailed ![Logic-Diagram](https://drive.google.com/file/d/1f4howkjsZ6SmW1u_paOCe2KLB10hCQFJ/view?usp=sharing) shows the outline of how our algorithm works.
+Our algorithm helps visually-impaired climbers scale climbing routes by giving them guidance to the next hold using sound output as an indicator of distance. The detailed [algo-logic-diagram] shows the outline of how our algorithm works.
 
 ### Technical Details
 1. Once the app is activated, the Mask R-CNN model extracts segmentations of holds and MediaPipe Pose model extracts key-points of climber.
@@ -131,7 +130,7 @@ With key considerations such as availability, scalability, performance and secur
  
 ## Cloud Solutioning
 The project uses core AWS services to support several processes in a largely decoupled and serverless architecture:  
-![cloud-architecture](https://drive.google.com/file/d/10VzpZKkVAtlb9m8Vrmv_k3RpOdwNFwhU/view?usp=sharing)
+[software-architecture-screenshot]
 
 1. The user mounts his mobile phone securely (e.g. on a tripod) to capture the climbing route on the rockwall in his camera frame. He then clicks on the <i>Start Streaming</i> button on the mobile app. The mobile app would start streaming the live camera feed to an RTMP endpoint hosted on an EC2 instance.
 2. When the climber is in position on the rockwall, he may start the climb session by clicking on the <i>Start Climb</i> button on the watch. This sends out an HTTP request to an endpoint on API Gateway. A Lambda function is triggered by this HTTP request and in turn prompts the <i>ClimbAI</i> EC2 instance to begin ingesting the live camera stream. 
@@ -140,14 +139,6 @@ The project uses core AWS services to support several processes in a largely dec
 5. Upon receiving the relative distance and body part data, the mobile app processes it and modulates an audio waveform to be played by the earphones worn by the climber. The climber interprets the audio tones to assist him in his climb.
 6. After the climb is completed, the climber may click on the <i>Stop Climb</i> button on the watch to terminate his climb session. Upon this, the watch sends an HTTP request, containing data from the climb session, to another endpoint on the API Gateway. This triggers another Lambda function to insert a record into a persistent data store hosted by DynamoDB.
 7. The web application will be updated with these new records and display them on a dashboard hosted by AWS Amplify on the public internet.
-
-<!-- USAGE EXAMPLES -->
-
-# Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 
 <!-- ACKNOWLEDGMENTS -->
@@ -183,3 +174,8 @@ The team is extremely grateful to the following people for the support and mento
 [ant-media]: https://img.shields.io/badge/Ant%20Media-FF5733?style=for-the-badge&logo=ant-media-server&logoColor=white
 [ant-media-url]: https://antmedia.io/
 [software-architecture-screenshot]: https://drive.google.com/file/d/10VzpZKkVAtlb9m8Vrmv_k3RpOdwNFwhU/view?usp=sharing
+[algo-logic-diagram]: https://drive.google.com/file/d/1pTqF8hgAB4eyG7-UhaXXid2Rylg0V4EF/view?usp=sharing
+[VGG-Image-Annotator]: https://www.robots.ox.ac.uk/~vgg/software/via/via.html
+[Detectron2]: https://github.com/facebookresearch/detectron2
+[MediaPipe]: https://mediapipe.dev/
+[Albumentation]: https://albumentations.ai/
