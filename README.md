@@ -54,8 +54,8 @@ This section outlines any major frameworks/libraries used to bootstrap our proje
 - [![Android][android]][android-url]
 - [![watchOS][watchos]][watch-url]
 - [![pyTortch][pytorch]][pytorch-url]
-- [![detectron2][detectron2]][detectron2-url]
-- [![mediapipe][mediapipe]][mediapipe-url]
+- [![detectron2][detectron2-img]][detectron2]
+- [![mediapipe][mediapipe-img]][mediapipe]
 - [![aws][aws]][aws-url]
 - [![mq][mq]][mq-url]
 - [![ant-media][ant-media]][ant-media-url]
@@ -163,10 +163,10 @@ The team is extremely grateful to the following people for the support and mento
 [watch-url]: https://developer.apple.com/watchos/
 [pytorch]: https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white
 [pytorch-url]: https://pytorch.org/
-[detectron2]: https://img.shields.io/badge/Detectron2-008CBA?style=for-the-badge&logo=detectron2&logoColor=white
-[detectron2-url]: https://ai.facebook.com/tools/detectron2/
-[mediapipe]: https://img.shields.io/badge/Mediapipe-00A5E4?style=for-the-badge&logo=mediapipe&logoColor=white
-[mediapipe-url]: https://developers.google.com/mediapipe
+[detectron2-img]: https://img.shields.io/badge/Detectron2-008CBA?style=for-the-badge&logo=detectron2&logoColor=white
+[detectron2]: https://ai.facebook.com/tools/detectron2/
+[mediapipe-img]: https://img.shields.io/badge/Mediapipe-00A5E4?style=for-the-badge&logo=mediapipe&logoColor=white
+[mediapipe]: https://developers.google.com/mediapipe
 [aws]: https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white
 [aws-url]: https://aws.amazon.com/
 [mq]: https://img.shields.io/badge/AWS%20SQS-FF9900?style=for-the-badge&logo=amazon-sqs&logoColor=white
@@ -176,6 +176,4 @@ The team is extremely grateful to the following people for the support and mento
 [software-architecture-screenshot]: https://drive.google.com/file/d/10VzpZKkVAtlb9m8Vrmv_k3RpOdwNFwhU/view?usp=sharing
 [algo-logic-diagram]: https://drive.google.com/file/d/1pTqF8hgAB4eyG7-UhaXXid2Rylg0V4EF/view?usp=sharing
 [VGG-Image-Annotator]: https://www.robots.ox.ac.uk/~vgg/software/via/via.html
-[Detectron2]: https://github.com/facebookresearch/detectron2
-[MediaPipe]: https://mediapipe.dev/
 [Albumentation]: https://albumentations.ai/
