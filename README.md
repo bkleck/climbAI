@@ -10,8 +10,8 @@
   <h3 align="center">ClimbAI</h3>
 
   <p align="center">
-    An AI solution to enable visually impaired individuals to participate in rock climbing
-  </p>
+    Cloud-based Computer Vision System for Enabling Visually Handicapped Individuals to Participate in Rock Climbing
+   </p>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -30,6 +30,7 @@
     <li>
       <a href="#cloud-infrastructure">Cloud Infrastructure</a>
     </li>
+    <li><a href="#video-demo">Video Demo</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
@@ -60,6 +61,7 @@ This section outlines any major frameworks/libraries used to bootstrap our proje
 - [![mq][mq]][mq-url]
 - [![ant-media][ant-media]][ant-media-url]
 
+
 <!-- AI and Algorithm -->
 
 # AI and Algorithm
@@ -79,12 +81,13 @@ We utilised 2 forms of computer vision in our project, mainly instance segmentat
 Our algorithm helps visually-impaired climbers scale climbing routes by giving them guidance to the next hold using sound output as an indicator of distance. The detailed [algo-logic-diagram] shows the outline of how our algorithm works.
 
 ### Technical Details
-1. Once the app is activated, the Mask R-CNN model extracts segmentations of holds and MediaPipe Pose model extracts key-points of climber.
-2. Hold colours are classified using the HSV colour range.
-3. When all 4 user limbs are on the same coloured holds, climb would be started and direction guidance will be initiated.
-4. When user is on 3-point contact (e.g. moving only 1 limb), the next nearest hold is determined and euclidean distance is calculated.
-5. Audio will be played on the mobile phone with beats per minute (BPM) corresponding to the distance away from the hold.
-6. Climb will be stopped when both hands of the user has touched the highest hold.
+1. Once the app is activated on the user's mobile device, video frames are livestreamed to the Python environment hosted on an AWS EC2 instance.
+2. The Mask R-CNN model extracts segmentations of holds and MediaPipe Pose model extracts key-points of climber from the video frames.
+3. Hold colours are classified using the HSV colour range.
+4. When all 4 user limbs are on the same coloured holds, climb would be started and direction guidance will be initiated.
+5. When user is on 3-point contact (e.g. moving only 1 limb), the next nearest hold is determined and euclidean distance is calculated.
+6. Audio will be streamed via a queue to the user's mobile device with frequency corresponding to the distance away from the hold.
+7. Climb will end when both hands of the user has touched the highest hold.
 
 ## Results
 
@@ -140,15 +143,21 @@ The project uses core AWS services to support several processes in a largely dec
 6. After the climb is completed, the climber may click on the <i>Stop Climb</i> button on the watch to terminate his climb session. Upon this, the watch sends an HTTP request, containing data from the climb session, to another endpoint on the API Gateway. This triggers another Lambda function to insert a record into a persistent data store hosted by DynamoDB.
 7. The web application will be updated with these new records and display them on a dashboard hosted by AWS Amplify on the public internet.
 
+<!-- VIDEO DEMO -->
+
+# Video Demo
+
+This short video demonstration shows how a user can utilize ClimbAI to track the progress of a climb. Accessibility features shown help to create a seamless climbing experience for visually-impaired climbers. Once the climber has all 4 limbs on the red-coloured holds, the climb will be initiated and the recommender system will start giving guidance to red holds. The frequency of the sound output increases as the climber moves nearer to the target hold, indicating distance away from the hold to the climber. When the climber touches the target hold, a distinct beep serves as a cue that he has reached. The climb ends when the climber has both hands on the final red hold.
 
 <!-- ACKNOWLEDGMENTS -->
 
 # Acknowledgments
 
-The team is extremely grateful to the following people for the support and mentorship throughout the project.
+The team is extremely grateful to the following people and organizations for the support and mentorship throughout the project.
 
 1. Professor Lin Weisi | Project Supervisor
 2. Dr Xuan Jing | Project Co-Supervisor
+3. boulder+ | Climbing Gym
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
