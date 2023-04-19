@@ -145,7 +145,7 @@ The project uses core AWS services to support several processes in a largely dec
 
 <!-- VIDEO DEMO -->
 
-# Video Demo
+## [Video Demo]
 
 This short video demonstration shows how a user can utilize ClimbAI to track the progress of a climb. Accessibility features shown help to create a seamless climbing experience for visually-impaired climbers. Once the climber has all 4 limbs on the red-coloured holds, the climb will be initiated and the recommender system will start giving guidance to red holds. The frequency of the sound output increases as the climber moves nearer to the target hold, indicating distance away from the hold to the climber. When the climber touches the target hold, a distinct beep serves as a cue that he has reached. The climb ends when the climber has both hands on the final red hold.
 
@@ -186,3 +186,4 @@ The team is extremely grateful to the following people and organizations for the
 [algo-logic-diagram]: https://drive.google.com/file/d/1f4howkjsZ6SmW1u_paOCe2KLB10hCQFJ/view?usp=sharing
 [VGG-Image-Annotator]: https://www.robots.ox.ac.uk/~vgg/software/via/via.html
 [Albumentation]: https://albumentations.ai/
+[Video Demo]:https://drive.google.com/file/d/1xvfbdPVJ21ZxWwTpDDylnJ_O_4rB0XaD/view?usp=sharing
