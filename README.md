@@ -110,7 +110,7 @@ Serves to trigger the start of our cloud AI inference and track progress through
 2. Accessibility was a core consideration during the design process, ensuring that the app features clear, spoken instructions that can be easily followed by visually impaired users.
 3. We use HTTP API calls to populate a cloud database with user data, including information on time, calories, and heart rate.
 
-## Web Dashboard [https://climbai.cloud](https://climbai.cloud)
+## Web Dashboard
 
 Mainly meant for the climber's coach to keep track of the climber's performance through weekly, monthly, yearly overviews
 
